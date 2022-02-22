@@ -1,4 +1,4 @@
-package com.dev.lojavirtual.controler;
+package com.dev.lojavirtual.controle;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
