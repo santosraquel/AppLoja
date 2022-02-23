@@ -3,6 +3,7 @@ package com.dev.lojavirtual.controle;
 import java.util.Optional;
 
 import com.dev.lojavirtual.modelos.Funcionario;
+import com.dev.lojavirtual.repositorios.CidadeRepositorio;
 import com.dev.lojavirtual.repositorios.FuncionarioRepositorio;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,10 +23,14 @@ public class FuncionarioControle {
     @Autowired
     private FuncionarioRepositorio funcionarioRepositorio;
 
+    @Autowired
+    private CidadeRepositorio cidadeRepositorio;
+
     @GetMapping("/administrativo/funcionarios/cadastrar")
     public ModelAndView cadastrar(Funcionario funcionario) {
         ModelAndView mv = new ModelAndView("administrativo/funcionarios/cadastro");
         mv.addObject("funcionario", funcionario);
+        mv.addObject("listaCidades", cidadeRepositorio.findAll());
         return mv;
     }
 

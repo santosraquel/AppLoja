@@ -37,9 +37,10 @@
 							
 							<select th:field="*{estado}"
 									class="form-control">
-									<option th:each="est: ${listaEstados}"
-										th:value="${est.id}" th:text="${est.nome}"></option>
-								</select>
+								<option th:each="est: ${listaEstados}"
+									th:value="${est.id}" th:text="${est.nome}">
+								</option>
+							</select>
 							
 							<div class="invalid-feedback"></div>
 						</div>
